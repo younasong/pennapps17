@@ -1,0 +1,9 @@
+<agm-map [zoom]='4' [latitude] = 'latitude' [longitude]='longitude' (mapClick)="onChoseLocation($event)">
+  <agm-marker *ngIf="locationChosen" [latitude] = 'markerLatitude' [longitude]='markerLongitude'>
+    <agm-info-window id="{{marketLatitude}}" #infoWindow>
+      <strong>{{currentState}}</strong><br/>
+      {{(songList[currentState]).Title}} <br/>
+      by {{songList[currentState].Artist}}
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
